@@ -25,7 +25,7 @@ import com.facebook.react.modules.network.NetworkingModule;
 import okhttp3.OkHttpClient;
 
 /**
- * Class responsible of loading Flipper inside your React Native application. This is the debug
+ * Class responsible for loading Flipper inside your React Native application. This is the debug
  * flavor of it. Here you can add your own plugins and customize the Flipper setup.
  */
 public class ReactNativeFlipper {
@@ -49,8 +49,7 @@ public class ReactNativeFlipper {
       client.addPlugin(networkFlipperPlugin);
       client.start();
 
-      // Fresco Plugin needs to ensure that ImagePipelineFactory is initialized
-      // Hence we run if after all native modules have been initialized
+      // Ensure ImagePipelineFactory is initialized before adding the Fresco plugin
       ReactContext reactContext = reactInstanceManager.getCurrentReactContext();
       if (reactContext == null) {
         reactInstanceManager.addReactInstanceEventListener(
