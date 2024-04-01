@@ -7,4 +7,10 @@
 # For more details, see
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
-# Add any project specific keep options here:
+# Keep important classes and methods
+-keep class com.example.app.** { *; }
+
+# Keep important libraries
+-keep class androidx.appcompat.** { *; }
+
+# Add any project-specific keep options here
